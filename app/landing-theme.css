@@ -1,64 +1,212 @@
-/* ═══ LANDING THEME — White + Lime + Dark Navy ═══ */
+/* Deep Ink + Electric Aurora */
 :root {
-  --t-bg: #ffffff; --t-bg-alt: #f8faf9; --t-bg-soft: #f3f6f4;
-  --t-lime: #a3e635; --t-lime-hover: #8fd12f; --t-lime-soft: #ecfccb; --t-lime-deep: #65a30d;
-  --t-dark: #0f1e1a; --t-dark-2: #1c2e28;
-  --t-text: #0f172a; --t-text-2: #4b5563; --t-text-3: #9ca3af;
-  --t-border: #e5e7eb;
-  --t-shadow-sm: 0 1px 3px rgba(15,30,26,.06), 0 4px 12px rgba(15,30,26,.04);
-  --t-shadow-md: 0 6px 16px rgba(15,30,26,.08), 0 12px 32px rgba(15,30,26,.06);
-  --t-shadow-lg: 0 16px 40px rgba(15,30,26,.10), 0 32px 64px rgba(15,30,26,.06);
-  --t-shadow-lime: 0 6px 20px rgba(163,230,53,.35);
-  --t-r-sm: 8px; --t-r-md: 12px; --t-r-lg: 16px; --t-r-xl: 24px; --t-r-full: 999px;
+  --d-bg-0: #0a0e1a;
+  --d-bg-1: #111827;
+  --d-bg-2: #1a2234;
+  --d-primary: #6366f1;
+  --d-primary-hi: #8b5cf6;
+  --d-cyan: #06b6d4;
+  --d-gold: #fbbf24;
+  --d-text: #f9fafb;
+  --d-text-2: #9ca3af;
+  --d-text-3: #6b7280;
+  --d-border: rgba(99,102,241,0.15);
+  --d-border-hi: rgba(139,92,246,0.4);
+  --d-grad: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+  --d-grad-text: linear-gradient(135deg, #a78bfa 0%, #06b6d4 100%);
+  --d-glow: rgba(99,102,241,0.5);
+  --d-shadow-sm: 0 2px 8px rgba(0,0,0,0.3), 0 8px 24px rgba(99,102,241,0.08);
+  --d-shadow-md: 0 8px 24px rgba(0,0,0,0.4), 0 16px 48px rgba(99,102,241,0.12);
+  --d-shadow-lg: 0 20px 60px rgba(0,0,0,0.5), 0 32px 80px rgba(99,102,241,0.18);
+  --d-r-sm: 10px;
+  --d-r-md: 14px;
+  --d-r-lg: 20px;
+  --d-r-xl: 28px;
+  --d-ease: cubic-bezier(0.2, 0.9, 0.3, 1);
+  --d-dur: 300ms;
 }
-html { color-scheme: light !important; }
-html, body, body .lp-page, main {
-  background: #ffffff !important;
-  color: #0f172a !important;
-  background-image: none !important;
+html { color-scheme: dark !important; }
+html, body { background: #0a0e1a !important; color: #f9fafb !important; }
+body, .lp-page, main {
+  background: #0a0e1a !important;
+  color: #f9fafb !important;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 10%, rgba(99,102,241,0.15), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 90%, rgba(6,182,212,0.10), transparent 55%) !important;
+  background-attachment: fixed !important;
 }
-.lp-header { background: rgba(255,255,255,.92) !important; border-bottom: 1px solid var(--t-border) !important; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; box-shadow: 0 1px 2px rgba(15,30,26,.03) !important; }
-.lp-brand { color: var(--t-text) !important; }
-.lp-brand > span:last-child > span { color: var(--t-lime-deep) !important; }
-.lp-brand-mark { background: var(--t-dark) !important; }
-.lp-nav-links a, .lp-footer-links a { color: var(--t-text-2) !important; }
-.lp-nav-links a:hover, .lp-footer-links a:hover { color: var(--t-text) !important; }
-.lp-nav-login { color: var(--t-text) !important; font-weight: 500 !important; }
-.lp-button, .lp-button-small { background: var(--t-lime) !important; color: var(--t-dark) !important; border: 0 !important; box-shadow: var(--t-shadow-lime) !important; font-weight: 700 !important; }
-.lp-button:hover, .lp-button-small:hover { background: var(--t-lime-hover) !important; transform: translateY(-2px) !important; box-shadow: 0 10px 28px rgba(163,230,53,.45) !important; }
-.lp-outline-button, .lp-button-outline, .lp-button-light { background: var(--t-dark) !important; color: #ffffff !important; border: 0 !important; box-shadow: 0 4px 12px rgba(15,30,26,.15) !important; }
-.lp-outline-button:hover, .lp-button-outline:hover { background: var(--t-dark-2) !important; transform: translateY(-2px) !important; }
-.lp-hero { background: radial-gradient(ellipse at 20% 10%, rgba(163,230,53,.10), transparent 50%), linear-gradient(180deg, #ffffff 0%, #f8faf9 100%) !important; color: var(--t-text) !important; }
-.lp-hero::before { background-image: linear-gradient(rgba(15,30,26,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(15,30,26,.04) 1px, transparent 1px) !important; opacity: .5 !important; }
-.lp-hero h1 { color: var(--t-text) !important; }
-.lp-hero h1 span { color: var(--t-lime-deep) !important; -webkit-text-fill-color: var(--t-lime-deep) !important; background: none !important; text-shadow: none !important; }
-.lp-hero-lede, .lp-hero p { color: var(--t-text-2) !important; }
-.lp-hero-badge { background: var(--t-lime-soft) !important; border: 1px solid rgba(101,163,13,.15) !important; color: var(--t-lime-deep) !important; }
-.lp-live-dot, .lp-online-dot { background: var(--t-lime-deep) !important; box-shadow: 0 0 0 4px rgba(163,230,53,.25) !important; }
-.lp-text-link { color: var(--t-text-2) !important; }
-.lp-text-link:hover { color: var(--t-text) !important; }
-.lp-play { border-color: var(--t-border) !important; color: var(--t-dark) !important; background: #fff !important; }
-.lp-hero-assurance { color: var(--t-text-3) !important; }
-.lp-hero-assurance svg { color: var(--t-lime-deep) !important; }
-section, .lp-value-section, .lp-features-section, .lp-showcase-section, .lp-steps-section, .lp-dashboard-section, .lp-payments-section, .lp-faq-section, .lp-trust-section { background: var(--t-bg) !important; color: var(--t-text) !important; }
-section:nth-of-type(even) { background: var(--t-bg-alt) !important; }
-.lp-dashboard-window { background: #ffffff !important; border: 1px solid var(--t-border) !important; color: var(--t-text) !important; box-shadow: var(--t-shadow-lg) !important; transform: perspective(1400px) rotateY(-5deg) rotateX(1deg) !important; }
-.lp-window-topbar { background: #fff !important; border-bottom: 1px solid var(--t-border) !important; }
-.lp-dashboard-sidebar { background: var(--t-dark) !important; color: #fff !important; border: 0 !important; }
-.lp-stat-card, .lp-chart-card, .lp-orders-card { background: #fff !important; border: 1px solid var(--t-border) !important; }
-.lp-stat-card strong, .lp-chart-card strong { color: var(--t-text) !important; }
-.lp-feature-card, .lp-step-card, .lp-plan-card, .lp-trust-card, .lp-methods-panel, .lp-localization-card, .lp-dashboard-mini-card, .lp-analytics-card, .lp-analytics-panel, .lp-storefront-mock, .lp-faq-item { background: #fff !important; border: 1px solid var(--t-border) !important; color: var(--t-text) !important; box-shadow: var(--t-shadow-sm) !important; }
-.lp-feature-card:hover, .lp-step-card:hover { transform: translateY(-4px) !important; border-color: rgba(163,230,53,.4) !important; box-shadow: var(--t-shadow-md) !important; }
-.tone-green, .tone-peach, .tone-blue, .tone-lime, .lp-step-icon, .lp-value-icon, .green-setting, .cash-icon, .bank-icon, .lp-setting-icon { background: var(--t-lime-soft) !important; color: var(--t-lime-deep) !important; }
-.lp h1, .lp h2, .lp h3, .lp h4 { color: var(--t-text) !important; }
-.lp h2 span, .lp-showcase-copy h2 span, .lp-payments-copy h2 span, .lp-faq-grid h2 span { color: var(--t-lime-deep) !important; -webkit-text-fill-color: var(--t-lime-deep) !important; background: none !important; }
-.lp-eyebrow { color: var(--t-lime-deep) !important; background: var(--t-lime-soft) !important; padding: 6px 14px !important; border-radius: var(--t-r-full) !important; display: inline-block !important; font-weight: 600 !important; }
-.lp-eyebrow-dot { background: var(--t-lime-deep) !important; }
-.lp-section-lede { color: var(--t-text-2) !important; }
-.lp-footer { background: var(--t-bg-alt) !important; border-top: 1px solid var(--t-border) !important; color: var(--t-text-2) !important; }
-.lp-cta { background: radial-gradient(ellipse at 50% 50%, rgba(163,230,53,.10), transparent 70%), #ffffff !important; }
-.lp-cta-inner { background: #fff !important; border: 1px solid var(--t-border) !important; border-radius: var(--t-r-xl) !important; box-shadow: var(--t-shadow-lg) !important; }
+.lp { color: var(--d-text) !important; background: transparent !important; }
+.lp-header {
+  background: rgba(10,14,26,0.75) !important;
+  border-bottom: 1px solid var(--d-border) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3) !important;
+}
+.lp-brand { color: var(--d-text) !important; }
+.lp-brand > span:last-child > span {
+  background: var(--d-grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+}
+.lp-brand-mark { background: var(--d-grad) !important; box-shadow: 0 6px 20px rgba(99,102,241,0.5) !important; }
+.lp-mark-column, .lp-mark-column.mark-two, .lp-mark-column.mark-three { background: #fff !important; opacity: 1 !important; }
+.lp-nav-links a, .lp-footer-links a, .lp-nav-login { color: var(--d-text-2) !important; }
+.lp-nav-links a:hover, .lp-footer-links a:hover, .lp-nav-login:hover { color: var(--d-primary-hi) !important; }
+.lp-theme-toggle { background: rgba(99,102,241,0.12) !important; border: 1px solid var(--d-border) !important; color: var(--d-text-2) !important; }
+.lp-button, .lp-button-small {
+  background: var(--d-grad) !important;
+  border: 0 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.4), 0 2px 4px rgba(99,102,241,0.2), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+  transition: transform var(--d-dur) var(--d-ease), box-shadow var(--d-dur) var(--d-ease) !important;
+}
+.lp-button:hover, .lp-button-small:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 32px rgba(99,102,241,0.55), 0 4px 8px rgba(99,102,241,0.25), inset 0 1px 0 rgba(255,255,255,0.3) !important;
+}
+.lp-outline-button, .lp-button-outline, .lp-button-light {
+  background: rgba(99,102,241,0.08) !important;
+  border: 1px solid var(--d-border-hi) !important;
+  color: var(--d-primary-hi) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+.lp-outline-button:hover, .lp-button-outline:hover, .lp-button-light:hover {
+  background: rgba(99,102,241,0.18) !important;
+  border-color: var(--d-primary-hi) !important;
+  box-shadow: 0 8px 24px rgba(99,102,241,0.3) !important;
+  transform: translateY(-2px) !important;
+}
+section, .lp-value-section, .lp-features-section, .lp-showcase-section, .lp-steps-section, .lp-dashboard-section, .lp-payments-section, .lp-faq-section, .lp-trust-section {
+  background: transparent !important;
+  color: var(--d-text) !important;
+}
+.lp-hero {
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(99,102,241,0.18), transparent 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(6,182,212,0.12), transparent 45%),
+    linear-gradient(180deg, #0a0e1a 0%, #111827 100%) !important;
+  color: var(--d-text) !important;
+}
+.lp-hero::before {
+  background-image:
+    linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px) !important;
+  opacity: .8 !important;
+}
+.lp-hero h1 { color: var(--d-text) !important; text-shadow: 0 0 60px rgba(99,102,241,0.3) !important; }
+.lp-hero h1 span {
+  background: var(--d-grad-text);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  text-shadow: none !important;
+}
+.lp-hero-lede, .lp-hero p { color: var(--d-text-2) !important; }
+.lp-hero-badge {
+  background: rgba(99,102,241,0.12) !important;
+  border: 1px solid var(--d-border-hi) !important;
+  color: var(--d-primary-hi) !important;
+  box-shadow: 0 0 20px -5px rgba(99,102,241,0.4) !important;
+}
+.lp-live-dot, .lp-online-dot {
+  background: var(--d-primary-hi) !important;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.2), 0 0 20px var(--d-glow) !important;
+}
+.lp-text-link { color: var(--d-text-2) !important; }
+.lp-text-link:hover { color: var(--d-primary-hi) !important; }
+.lp-play {
+  border-color: var(--d-border-hi) !important;
+  color: var(--d-primary-hi) !important;
+  background: rgba(99,102,241,0.08) !important;
+}
+.lp-hero-assurance { color: var(--d-text-3) !important; }
+.lp-hero-assurance svg { color: var(--d-primary-hi) !important; }
+.lp-dashboard-window {
+  background: linear-gradient(145deg, rgba(26,34,52,0.95), rgba(17,24,39,0.98)) !important;
+  border: 1px solid var(--d-border-hi) !important;
+  color: var(--d-text) !important;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 80px -20px rgba(99,102,241,0.4), inset 0 1px 0 rgba(255,255,255,0.05) !important;
+  transform: perspective(1400px) rotateY(-5deg) rotateX(2deg) !important;
+}
+.lp-window-topbar { background: rgba(10,14,26,0.6) !important; border-bottom: 1px solid var(--d-border) !important; }
+.lp-window-address { background: rgba(99,102,241,0.08) !important; color: var(--d-text-3) !important; }
+.lp-window-address span { background: var(--d-primary-hi) !important; box-shadow: 0 0 8px var(--d-glow) !important; }
+.lp-dashboard-sidebar { background: rgba(10,14,26,0.7) !important; border-left-color: var(--d-border) !important; color: var(--d-text) !important; }
+.lp-dashboard-body, .lp-dash-topline, .lp-dash-user, .lp-dash-lower { color: var(--d-text) !important; }
+.lp-stat-card, .lp-chart-card, .lp-orders-card {
+  background: rgba(26,34,52,0.8) !important;
+  border: 1px solid var(--d-border) !important;
+  color: var(--d-text) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3) !important;
+}
+.lp-stat-card strong, .lp-chart-card strong, .lp-orders-card strong { color: var(--d-text) !important; text-shadow: 0 0 20px rgba(99,102,241,0.4) !important; }
+.lp-floating-insight, .lp-promo-float {
+  background: linear-gradient(145deg, rgba(35,44,66,0.95), rgba(26,34,52,0.98)) !important;
+  border: 1px solid var(--d-border-hi) !important;
+  color: var(--d-text) !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 40px -10px rgba(99,102,241,0.4) !important;
+  backdrop-filter: blur(16px) !important;
+}
+.lp-floating-insight > span:first-child, .lp-promo-float-icon { background: rgba(99,102,241,0.2) !important; color: var(--d-primary-hi) !important; }
+.lp-feature-card, .lp-step-card, .lp-plan-card, .lp-trust-card, .lp-methods-panel, .lp-localization-card, .lp-dashboard-mini-card, .lp-analytics-card, .lp-analytics-panel, .lp-storefront-mock, .lp-faq-item {
+  background: linear-gradient(145deg, rgba(26,34,52,0.85), rgba(17,24,39,0.95)) !important;
+  border: 1px solid var(--d-border) !important;
+  color: var(--d-text) !important;
+  box-shadow: var(--d-shadow-sm) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: transform var(--d-dur) var(--d-ease), border-color var(--d-dur) var(--d-ease), box-shadow var(--d-dur) var(--d-ease) !important;
+}
+.lp-feature-card:hover, .lp-step-card:hover, .lp-plan-card:hover, .lp-trust-card:hover {
+  transform: translateY(-8px) rotateX(2deg) !important;
+  border-color: var(--d-border-hi) !important;
+  box-shadow: var(--d-shadow-lg), 0 0 60px -15px rgba(99,102,241,0.6) !important;
+}
+.tone-green, .tone-peach, .tone-blue, .tone-lime, .lp-step-icon, .lp-value-icon, .green-setting, .cash-icon, .bank-icon, .lp-setting-icon, .lp-shop-avatar, .lp-user-avatar, .lp-side-link.active {
+  background: linear-gradient(135deg, rgba(99,102,241,0.25), rgba(6,182,212,0.15)) !important;
+  color: var(--d-primary-hi) !important;
+  border: 1px solid var(--d-border-hi) !important;
+  box-shadow: 0 0 20px -5px rgba(99,102,241,0.4) !important;
+}
+.lp h1, .lp h2, .lp h3, .lp h4 { color: var(--d-text) !important; }
+.lp h2 span, .lp-section-heading span, .lp-showcase-copy h2 span, .lp-dashboard-promo-copy h2 span, .lp-global-copy h2 span, .lp-payments-copy h2 span, .lp-faq-grid h2 span {
+  background: var(--d-grad-text) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+.lp-eyebrow { color: var(--d-primary-hi) !important; background: rgba(99,102,241,0.12) !important; padding: 6px 14px !important; border-radius: 999px !important; border: 1px solid var(--d-border) !important; }
+.lp-eyebrow-dot { background: var(--d-primary-hi) !important; box-shadow: 0 0 8px var(--d-glow) !important; }
+.lp-section-lede { color: var(--d-text-2) !important; }
+.lp-footer { background: rgba(10,14,26,0.8) !important; border-top: 1px solid var(--d-border) !important; color: var(--d-text-2) !important; }
+.lp-footer-brand { color: var(--d-text) !important; }
+.lp-footer-brand .lp-brand-mark { background: var(--d-grad) !important; }
+.lp-cta { background: radial-gradient(ellipse at 50% 50%, rgba(99,102,241,0.15), transparent 70%), linear-gradient(180deg, #0a0e1a 0%, #111827 100%) !important; }
+.lp-cta-inner {
+  background: linear-gradient(145deg, rgba(26,34,52,0.9), rgba(17,24,39,0.95)) !important;
+  border: 1px solid var(--d-border-hi) !important;
+  box-shadow: var(--d-shadow-lg), 0 0 100px -30px rgba(99,102,241,0.6) !important;
+  border-radius: var(--d-r-xl) !important;
+}
+.lp-cta-orb { background: radial-gradient(circle, rgba(99,102,241,0.3), transparent 70%) !important; }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--t-bg-alt); }
-::-webkit-scrollbar-thumb { background: var(--t-dark); border-radius: 10px; }
-::selection { background: var(--t-lime); color: var(--t-dark); }
+::-webkit-scrollbar-track { background: #0a0e1a; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #6366f1, #06b6d4); border-radius: 10px; }
+::selection { background: rgba(99,102,241,0.4); color: #fff; }
+@keyframes auroraRise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes auroraFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes auroraPulse { 0%, 100% { box-shadow: 0 0 20px -8px rgba(99,102,241,0.5); } 50% { box-shadow: 0 0 60px -10px rgba(99,102,241,0.8); } }
+.lp-feature-card, .lp-step-card, .lp-plan-card, .lp-trust-card { animation: auroraRise .8s var(--d-ease) both; }
+.lp-floating-insight, .lp-promo-float { animation: auroraFloat 6s ease-in-out infinite; }
+.lp-analytics-card, .lp-dashboard-mini-card, .lp-cta-inner { animation: auroraPulse 5s ease-in-out infinite; }
+.lp-feature-card, .lp-step-card, .lp-plan-card { transform-style: preserve-3d; }
+.lp-dashboard-window { transition: transform .8s var(--d-ease) !important; }
+.lp-dashboard-window:hover { transform: perspective(1400px) rotateY(0deg) rotateX(0deg) translateY(-6px) !important; }
+.lp-button svg, .lp-outline-button svg { transition: transform .3s var(--d-ease); }
+.lp-button:hover svg { transform: translateX(-4px); }
