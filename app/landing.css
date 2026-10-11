@@ -1641,3 +1641,180 @@ svg:not([data-color-keep]) { transition: all .25s ease; }
 .lp-plan-card.is-featured,
 [data-featured="true"] { animation: lpPulse 3.5s ease-in-out infinite; }
 
+
+/* ══════════════════════════════════════════════════════════════════
+   ✨ NEON ELEGANCE v2 — Final Polish
+   تصميم داكن أنيق متّسق — يزيل الجزر البيضاء ويضيف عمقاً
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ═══ ① SECTIONS — توحيد خلفية الأقسام ═══ */
+.lp-value-section,
+.lp-features-section,
+.lp-showcase-section,
+.lp-steps-section,
+.lp-dashboard-section,
+.lp-payments-section,
+.lp-faq-section {
+  background: transparent !important;
+}
+.lp-audience {
+  background: rgba(5, 8, 10, .35) !important;
+  border-block: 1px solid var(--neon-border) !important;
+  border-bottom-color: var(--neon-border) !important;
+}
+
+/* ═══ ② GLASS CARDS — البطاقات الرئيسية ═══ */
+.lp-feature-card,
+.lp-step-card,
+.lp-methods-panel,
+.lp-localization-card,
+.lp-dashboard-mini-card,
+.lp-analytics-card,
+.lp-analytics-panel,
+.lp-storefront-mock,
+.lp-faq-item,
+.lp-plan-card,
+.lp-trust-card {
+  background: linear-gradient(145deg, rgba(15,26,31,.85), rgba(11,18,26,.95)) !important;
+  border: 1px solid var(--neon-border) !important;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,.45),
+    0 0 0 1px rgba(0,255,157,.04) inset,
+    0 1px 0 rgba(0,255,157,.08) inset !important;
+  color: var(--text-1) !important;
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+}
+
+/* ═══ ③ INNER MOCKUPS — بطاقات داخلية عميقة ═══ */
+.lp-dashboard-window,
+.lp-dashboard-sidebar,
+.lp-window-topbar,
+.lp-stat-card,
+.lp-chart-card,
+.lp-orders-card,
+.lp-dashboard-body {
+  background: rgba(8,18,26,.96) !important;
+  border-color: var(--neon-border) !important;
+  color: var(--text-1) !important;
+}
+.lp-dashboard-window {
+  border: 1px solid var(--neon-border-hi) !important;
+  box-shadow:
+    0 33px 100px rgba(0,0,0,.55),
+    0 0 0 1px rgba(0,255,157,.06) inset,
+    0 0 60px -10px rgba(0,255,157,.18) !important;
+}
+
+/* ═══ ④ FLOATING — البطاقات الطائرة ═══ */
+.lp-floating-insight,
+.lp-promo-float {
+  background: rgba(11,18,26,.98) !important;
+  border: 1px solid var(--neon-border-hi) !important;
+  color: var(--text-1) !important;
+  box-shadow:
+    0 14px 40px rgba(0,0,0,.6),
+    0 0 30px -5px rgba(0,255,157,.25) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ═══ ⑤ TYPOGRAPHY — تسلسل نصوص داخل البطاقات ═══ */
+.lp-feature-card h3, .lp-step-card h3,
+.lp-methods-panel h3, .lp-localization-card h3,
+.lp-analytics-card h3, .lp-dashboard-mini-card h3 {
+  color: var(--text-1) !important;
+}
+.lp-feature-card p, .lp-step-card p,
+.lp-methods-panel p, .lp-localization-card p,
+.lp-analytics-card p {
+  color: var(--text-2) !important;
+}
+.lp-stat-card strong, .lp-analytics-kpis strong,
+.lp-chart-card strong, .lp-orders-card strong {
+  color: var(--neon) !important;
+}
+.lp-stat-card span, .lp-chart-labels span,
+.lp-analytics-axis span {
+  color: var(--text-3) !important;
+}
+
+/* ═══ ⑥ ICONS — أيقونات نيون متّسقة ═══ */
+.tone-green, .tone-peach,
+.lp-step-icon, .lp-value-icon,
+.green-setting, .cash-icon, .bank-icon,
+.lp-setting-icon, .lp-promo-float-icon,
+.lp-side-link.active {
+  background: rgba(0,255,157,.12) !important;
+  color: var(--neon) !important;
+  border: 1px solid var(--neon-border) !important;
+}
+.lp-shop-avatar, .lp-user-avatar {
+  background: rgba(0,255,157,.12) !important;
+  color: var(--neon) !important;
+}
+
+/* ═══ ⑦ HOVER — رفع وتوهّج أنيق ═══ */
+.lp-feature-card,
+.lp-step-card,
+.lp-plan-card,
+.lp-trust-card,
+.lp-methods-panel,
+.lp-localization-card {
+  transition: transform .3s cubic-bezier(.2,.9,.3,1),
+              border-color .3s ease,
+              box-shadow .3s ease !important;
+}
+.lp-feature-card:hover,
+.lp-step-card:hover,
+.lp-plan-card:hover,
+.lp-trust-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--neon-border-hi) !important;
+  box-shadow:
+    0 24px 60px rgba(0,255,157,.18),
+    0 0 0 1px var(--neon-border-hi) inset !important;
+}
+
+/* ═══ ⑧ NAVBAR — زجاج ضبابي احترافي ═══ */
+.lp-header {
+  background: rgba(5,8,10,.75) !important;
+  border-bottom: 1px solid var(--neon-border) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,.35) !important;
+}
+
+/* ═══ ⑨ SECONDARY BUTTONS — نيون شفاف ═══ */
+.lp-outline-button,
+.lp-button-outline,
+.lp-button-light {
+  background: rgba(0,255,157,.06) !important;
+  border: 1px solid var(--neon-border-hi) !important;
+  color: var(--neon) !important;
+  transition: all .25s ease !important;
+}
+.lp-outline-button:hover,
+.lp-button-outline:hover,
+.lp-button-light:hover {
+  background: rgba(0,255,157,.14) !important;
+  box-shadow: 0 0 24px -6px var(--neon-glow) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ═══ ⑩ MICRO-ANIMATIONS — نبض ناعم للعناصر المميزة ═══ */
+@keyframes neonBreath {
+  0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,.45), 0 0 0 1px var(--neon-border) inset; }
+  50%      { box-shadow: 0 8px 32px rgba(0,0,0,.45), 0 0 0 1px var(--neon-border-hi) inset, 0 0 24px -8px var(--neon-glow); }
+}
+.lp-analytics-card,
+.lp-dashboard-mini-card {
+  animation: neonBreath 6s ease-in-out infinite;
+}
+
+/* ═══ ⑪ SCROLL PADDING للأقسام ═══ */
+.lp-features-section,
+.lp-steps-section,
+.lp-dashboard-section {
+  padding-block: clamp(60px, 8vw, 110px) !important;
+}
