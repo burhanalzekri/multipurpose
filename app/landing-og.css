@@ -1,0 +1,347 @@
+/* ═══════════════════════════════════════════════════════════════
+   OG-INSPIRED REDESIGN - White + Royal Purple + Blue
+   Complete visual override for MULTISTORE landing page
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── 1. DESIGN TOKENS ─── */
+:root {
+  --og-bg: #ffffff;
+  --og-bg-alt: #fafaff;
+  --og-bg-tint: #f5f3ff;
+  --og-bg-deep: #ede9fe;
+
+  --og-primary: #7c3aed;
+  --og-primary-hi: #8b5cf6;
+  --og-primary-deep: #6d28d9;
+  --og-blue: #3b82f6;
+  --og-blue-hi: #60a5fa;
+  --og-cyan: #06b6d4;
+
+  --og-text: #0f172a;
+  --og-text-2: #475569;
+  --og-text-3: #94a3b8;
+
+  --og-border: #e2e8f0;
+  --og-border-hi: #c7d2fe;
+  --og-border-deep: #a5b4fc;
+
+  --og-grad: linear-gradient(135deg, #7c3aed 0%, #6366f1 45%, #3b82f6 100%);
+  --og-grad-soft: linear-gradient(135deg, #ede9fe 0%, #dbeafe 100%);
+  --og-grad-text: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+
+  --og-shadow-sm: 0 1px 2px rgba(15,23,42,.05), 0 2px 4px rgba(15,23,42,.04);
+  --og-shadow-md: 0 4px 8px rgba(124,58,237,.06), 0 12px 24px rgba(15,23,42,.06);
+  --og-shadow-lg: 0 12px 32px rgba(124,58,237,.12), 0 24px 48px rgba(15,23,42,.08);
+  --og-shadow-xl: 0 24px 60px rgba(124,58,237,.18), 0 48px 96px rgba(15,23,42,.10);
+
+  --og-r-sm: 10px;
+  --og-r-md: 14px;
+  --og-r-lg: 20px;
+  --og-r-xl: 28px;
+  --og-r-full: 999px;
+
+  --og-ease: cubic-bezier(.2,.9,.3,1);
+  --og-dur: 280ms;
+}
+
+/* ─── 2. BASE ─── */
+html { color-scheme: light !important; }
+html, body {
+  background: var(--og-bg) !important;
+  color: var(--og-text) !important;
+}
+body, .lp-page, main {
+  background: var(--og-bg) !important;
+  color: var(--og-text) !important;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 5%, rgba(124,58,237,.06), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 85% 95%, rgba(59,130,246,.05), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+.lp { color: var(--og-text) !important; background: transparent !important; }
+
+/* ─── 3. NAVBAR ─── */
+.lp-header {
+  background: rgba(255,255,255,.85) !important;
+  border-bottom: 1px solid var(--og-border) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  box-shadow: 0 1px 0 rgba(124,58,237,.06), 0 4px 24px rgba(15,23,42,.04) !important;
+}
+.lp-brand { color: var(--og-text) !important; }
+.lp-brand > span:last-child > span {
+  background: var(--og-grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+}
+.lp-brand-mark {
+  background: var(--og-grad) !important;
+  box-shadow: 0 6px 20px rgba(124,58,237,.3) !important;
+}
+.lp-mark-column, .lp-mark-column.mark-two, .lp-mark-column.mark-three {
+  background: #fff !important;
+  opacity: 1 !important;
+}
+.lp-nav-links a, .lp-footer-links a { color: var(--og-text-2) !important; }
+.lp-nav-links a:hover, .lp-footer-links a:hover { color: var(--og-primary) !important; }
+.lp-nav-login { color: var(--og-text-2) !important; }
+.lp-nav-login:hover { color: var(--og-primary) !important; }
+.lp-theme-toggle {
+  background: var(--og-bg-tint) !important;
+  border: 1px solid var(--og-border) !important;
+  color: var(--og-text-2) !important;
+}
+
+/* ─── 4. BUTTONS ─── */
+.lp-button, .lp-button-small {
+  background: var(--og-grad) !important;
+  border: 0 !important;
+  color: #fff !important;
+  box-shadow:
+    0 4px 14px rgba(124,58,237,.30),
+    0 2px 4px rgba(124,58,237,.15),
+    inset 0 1px 0 rgba(255,255,255,.25) !important;
+  transition: transform var(--og-dur) var(--og-ease),
+              box-shadow var(--og-dur) var(--og-ease) !important;
+}
+.lp-button:hover, .lp-button-small:hover {
+  transform: translateY(-3px) !important;
+  box-shadow:
+    0 12px 30px rgba(124,58,237,.38),
+    0 4px 8px rgba(124,58,237,.20),
+    inset 0 1px 0 rgba(255,255,255,.30) !important;
+}
+.lp-outline-button, .lp-button-outline, .lp-button-light {
+  background: var(--og-bg) !important;
+  border: 1px solid var(--og-border-hi) !important;
+  color: var(--og-primary) !important;
+  box-shadow: var(--og-shadow-sm) !important;
+}
+.lp-outline-button:hover, .lp-button-outline:hover {
+  background: var(--og-bg-tint) !important;
+  border-color: var(--og-primary) !important;
+  box-shadow: 0 8px 20px rgba(124,58,237,.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ─── 5. SECTIONS ─── */
+section, .lp-section, .lp-value-section, .lp-features-section,
+.lp-showcase-section, .lp-steps-section, .lp-dashboard-section,
+.lp-payments-section, .lp-faq-section, .lp-trust-section {
+  background: transparent !important;
+  color: var(--og-text) !important;
+}
+section:nth-of-type(even), .lp-section:nth-of-type(even) {
+  background: var(--og-bg-alt) !important;
+}
+
+/* ─── 6. HERO ─── */
+.lp-hero {
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(124,58,237,.14), transparent 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(59,130,246,.12), transparent 45%),
+    linear-gradient(180deg, #ffffff 0%, #fafaff 100%) !important;
+  color: var(--og-text) !important;
+}
+.lp-hero::before {
+  background-image:
+    linear-gradient(rgba(124,58,237,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,58,237,.05) 1px, transparent 1px) !important;
+  opacity: .6 !important;
+}
+.lp-hero h1 { color: var(--og-text) !important; text-shadow: none !important; }
+.lp-hero h1 span {
+  background: var(--og-grad-text);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  text-shadow: none !important;
+}
+.lp-hero-lede, .lp-hero p, .lp-hero-copy p { color: var(--og-text-2) !important; }
+.lp-hero-badge {
+  background: var(--og-bg-tint) !important;
+  border: 1px solid var(--og-border-hi) !important;
+  color: var(--og-primary) !important;
+}
+.lp-live-dot, .lp-online-dot {
+  background: var(--og-primary) !important;
+  box-shadow: 0 0 0 4px rgba(124,58,237,.15) !important;
+}
+.lp-text-link { color: var(--og-text-2) !important; }
+.lp-text-link:hover { color: var(--og-primary) !important; }
+.lp-play {
+  border-color: var(--og-border-hi) !important;
+  color: var(--og-primary) !important;
+  background: var(--og-bg) !important;
+}
+.lp-hero-assurance { color: var(--og-text-3) !important; }
+.lp-hero-assurance svg { color: var(--og-primary) !important; }
+
+/* Hero dashboard window */
+.lp-dashboard-window {
+  background: rgba(255,255,255,.95) !important;
+  border: 1px solid var(--og-border) !important;
+  color: var(--og-text) !important;
+  box-shadow:
+    0 30px 80px rgba(124,58,237,.15),
+    0 10px 30px rgba(15,23,42,.08),
+    inset 0 1px 0 rgba(255,255,255,.9) !important;
+  backdrop-filter: blur(20px);
+}
+.lp-window-topbar { background: #fff !important; border-bottom: 1px solid var(--og-border) !important; }
+.lp-window-address { background: var(--og-bg-tint) !important; color: var(--og-text-3) !important; }
+.lp-window-address span { background: var(--og-primary) !important; }
+.lp-dashboard-sidebar { background: var(--og-bg-alt) !important; border-left-color: var(--og-border) !important; }
+.lp-dashboard-body, .lp-dash-topline, .lp-dash-user, .lp-dash-lower { color: var(--og-text) !important; }
+.lp-stat-card, .lp-chart-card, .lp-orders-card {
+  background: #fff !important;
+  border: 1px solid var(--og-border) !important;
+  box-shadow: var(--og-shadow-sm) !important;
+}
+.lp-stat-card strong, .lp-chart-card strong, .lp-orders-card strong { color: var(--og-primary) !important; }
+.lp-floating-insight, .lp-promo-float {
+  background: #fff !important;
+  border: 1px solid var(--og-border) !important;
+  box-shadow: var(--og-shadow-lg) !important;
+  color: var(--og-text) !important;
+}
+.lp-floating-insight > span:first-child, .lp-promo-float-icon {
+  background: var(--og-bg-tint) !important;
+  color: var(--og-primary) !important;
+}
+
+/* ─── 7. CARDS ─── */
+.lp-feature-card, .lp-step-card, .lp-plan-card, .lp-trust-card,
+.lp-methods-panel, .lp-localization-card, .lp-dashboard-mini-card,
+.lp-analytics-card, .lp-analytics-panel, .lp-storefront-mock, .lp-faq-item {
+  background: #fff !important;
+  border: 1px solid var(--og-border) !important;
+  color: var(--og-text) !important;
+  box-shadow: var(--og-shadow-md) !important;
+  transition: transform var(--og-dur) var(--og-ease),
+              border-color var(--og-dur) var(--og-ease),
+              box-shadow var(--og-dur) var(--og-ease) !important;
+}
+.lp-feature-card:hover, .lp-step-card:hover, .lp-plan-card:hover, .lp-trust-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--og-border-hi) !important;
+  box-shadow: var(--og-shadow-xl) !important;
+}
+.tone-green, .tone-peach, .tone-blue, .tone-lime,
+.lp-step-icon, .lp-value-icon, .green-setting, .cash-icon, .bank-icon,
+.lp-setting-icon, .lp-shop-avatar, .lp-user-avatar, .lp-side-link.active {
+  background: var(--og-grad-soft) !important;
+  color: var(--og-primary) !important;
+}
+
+/* ─── 8. TYPOGRAPHY ─── */
+.lp h1, .lp h2, .lp h3, .lp h4 { color: var(--og-text) !important; }
+.lp h2 span, .lp-section-heading span, .lp-showcase-copy h2 span,
+.lp-dashboard-promo-copy h2 span, .lp-global-copy h2 span,
+.lp-payments-copy h2 span, .lp-faq-grid h2 span {
+  background: var(--og-grad-text);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+.lp-eyebrow {
+  color: var(--og-primary) !important;
+  background: var(--og-bg-tint) !important;
+  padding: 6px 12px !important;
+  border-radius: var(--og-r-full) !important;
+}
+.lp-eyebrow-dot { background: var(--og-primary) !important; }
+.lp-section-lede { color: var(--og-text-2) !important; }
+
+/* ─── 9. FOOTER ─── */
+.lp-footer {
+  background: var(--og-bg-alt) !important;
+  border-top: 1px solid var(--og-border) !important;
+  color: var(--og-text-2) !important;
+}
+.lp-footer-brand { color: var(--og-text) !important; }
+.lp-footer-brand .lp-brand-mark { background: var(--og-grad) !important; }
+
+/* ─── 10. ANALYTICS ─── */
+.lp-analytics-card, .lp-analytics-panel {
+  background: #fff !important;
+  border: 1px solid var(--og-border) !important;
+  box-shadow: var(--og-shadow-lg) !important;
+}
+.lp-analytics-panel-foot { color: var(--og-text-3) !important; }
+.lp-chart-lines > *, .lp-analytics-grid-lines > * { stroke: var(--og-border) !important; }
+.lp-analytics-chart [class*="bar"], .lp-analytics-panel [class*="bar"] {
+  background: var(--og-grad) !important;
+}
+
+/* ─── 11. FAQ ─── */
+.lp-faq-item {
+  background: #fff !important;
+  border: 1px solid var(--og-border) !important;
+}
+.lp-faq-item:hover {
+  border-color: var(--og-border-hi) !important;
+  box-shadow: var(--og-shadow-md) !important;
+}
+.lp-faq-item summary, .lp-faq-item [class*="question"] { color: var(--og-text) !important; }
+
+/* ─── 12. CTA ─── */
+.lp-cta {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(124,58,237,.08), transparent 70%),
+    linear-gradient(180deg, #fafaff 0%, #ffffff 100%) !important;
+}
+.lp-cta-inner {
+  background: #fff !important;
+  border: 1px solid var(--og-border) !important;
+  box-shadow: var(--og-shadow-xl) !important;
+  border-radius: var(--og-r-xl) !important;
+}
+.lp-cta-orb { background: radial-gradient(circle, rgba(124,58,237,.15), transparent 70%) !important; }
+
+/* ─── 13. SCROLLBAR + SELECTION ─── */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--og-bg-alt); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7c3aed, #3b82f6);
+  border-radius: 10px;
+}
+::selection { background: rgba(124,58,237,.25); color: var(--og-text); }
+
+/* ─── 14. ANIMATIONS ─── */
+@keyframes ogRise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ogFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.lp-feature-card, .lp-step-card, .lp-plan-card, .lp-trust-card {
+  animation: ogRise .7s var(--og-ease) both;
+}
+.lp-floating-insight, .lp-promo-float {
+  animation: ogFloat 5s ease-in-out infinite;
+}
+
+/* ─── 15. 3D EFFECTS ─── */
+.lp-feature-card, .lp-step-card, .lp-plan-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.lp-feature-card:hover, .lp-step-card:hover {
+  transform: translateY(-6px) rotateX(2deg) !important;
+}
+.lp-dashboard-window {
+  transform: perspective(1400px) rotateY(-4deg) rotateX(2deg) !important;
+  transition: transform .6s var(--og-ease) !important;
+}
+.lp-dashboard-window:hover {
+  transform: perspective(1400px) rotateY(0deg) rotateX(0deg) translateY(-4px) !important;
+}
+.lp-button svg, .lp-outline-button svg { transition: transform .3s var(--og-ease); }
+.lp-button:hover svg { transform: translateX(-4px); }
