@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import "./landing.css";
-import "./landing-og.css";
+import "./landing-theme.css";
 import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 export const metadata: Metadata = {
   title: "MultiStore | متجرك الإلكتروني في مكان واحد",
