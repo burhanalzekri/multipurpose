@@ -1001,4 +1001,643 @@ html[data-theme="dark"] :focus-visible { outline-color:#00ff9d; }
 @media (max-width: 760px) {
   .lp-nav { gap: 10px; }
   .lp-nav-links { display: none; }
+  .lp-nav-actions { gap: 6px; }
+  .lp-theme-toggle { width: 44px; padding: 0; }
+  .lp-theme-toggle span { display: none !important; }
+  html[data-theme="dark"] .lp-theme-sun, html:not([data-theme="dark"]) .lp-theme-moon { display: inline; }
+  .lp-feature-card.lp-analytics-card { grid-column: span 2; grid-template-columns: 1fr; gap: 19px; padding: 20px 16px; }
+  .lp-analytics-panel { padding: 13px; }
+  .lp-analytics-toolbar { align-items: flex-start; flex-direction: column; }
+  .lp-report-controls { width: 100%; }
+  .lp-report-controls button { flex: 1; }
+  .lp-analytics-chart { height: 112px; }
 }
+@media (max-width: 420px) {
+  .lp-brand { font-size: 18px; }
+  .lp-brand-mark { width: 31px; height: 31px; }
+  .lp-nav-actions .lp-button-small { min-height: 40px; padding-inline: 10px; font-size: 11px; }
+  .lp-analytics-kpis { gap: 16px; }
+  .lp-analytics-kpis b { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-theme-toggle, .lp-report-controls button, .lp-report-download, .lp-analytics-chart > span { transition: none !important; }
+}
+
+/* Keep the initial viewport cheap on constrained mobile CPUs; reserve space to prevent CLS. */
+.lp-features-section, .lp-showcase-section, .lp-steps-section, .lp-dashboard-section,
+.lp-global-section, .lp-payments-section, .lp-faq-section, .lp-cta-section,
+.lp-value-section, .lp-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 760px;
+}
+.lp-signal-card, .lp-mood-card { backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+/* ═══════════════════════════════════════════════════════
+   🎨 NEON DARK OVERRIDE — Final
+   يفرض الثيم الداكن على كل الحالات (light/dark/system)
+   ═══════════════════════════════════════════════════════ */
+
+/* ① إلغاء الثيم الفاتح + إجبار الداكن */
+html, html[data-theme], html[data-theme="light"], html[data-theme="dark"],
+:root, body {
+  color-scheme: dark !important;
+  --lp-bg: #05080a !important;
+  --lp-bg-2: #0b1215 !important;
+  --lp-card: #0f1a1f !important;
+  --lp-neon: #00ff9d !important;
+  --lp-neon-2: #00cc7a !important;
+  --lp-glow: rgba(0,255,157,.45) !important;
+  --lp-soft: rgba(0,255,157,.12) !important;
+  --lp-border: rgba(0,255,157,.18) !important;
+  --lp-border-hi: rgba(0,255,157,.55) !important;
+  --lp-txt: #eafff5 !important;
+  --lp-txt-2: #9fb5ad !important;
+  --lp-txt-3: #5a6b66 !important;
+}
+
+/* ② الخلفية العامة — بأعلى أولوية */
+html[data-theme] body,
+html[data-theme="light"] body,
+html[data-theme="dark"] body,
+body,
+.lp-page {
+  background: var(--lp-bg) !important;
+  color: var(--lp-txt) !important;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(0,255,157,.08), transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(0,255,157,.05), transparent 50%) !important;
+}
+
+/* ③ Hero — كل النسخ */
+.lp-hero,
+html[data-theme] .lp-hero,
+html[data-theme="light"] .lp-hero,
+html[data-theme="dark"] .lp-hero {
+  background:
+    radial-gradient(ellipse at 18% 6%, rgba(0,255,157,.18), transparent 40%),
+    radial-gradient(ellipse at 78% 77%, rgba(0,204,122,.14), transparent 42%),
+    #05080a !important;
+  color: var(--lp-txt) !important;
+}
+.lp-hero h1,
+html[data-theme] .lp-hero h1,
+html[data-theme="light"] .lp-hero h1,
+html[data-theme="dark"] .lp-hero h1 {
+  color: var(--lp-txt) !important;
+  text-shadow: 0 0 40px rgba(0,255,157,.15);
+}
+.lp-hero h1 span,
+html[data-theme="dark"] .lp-hero h1 span,
+html[data-theme="light"] .lp-hero h1 span {
+  color: var(--lp-neon) !important;
+  -webkit-text-fill-color: var(--lp-neon) !important;
+  text-shadow: 0 0 24px var(--lp-glow);
+}
+.lp-hero p, .lp-hero-copy p, .lp-hero-subtitle {
+  color: var(--lp-txt-2) !important;
+}
+
+/* ④ الأزرار */
+.lp-button, .lp-outline-button, .lp-button-light,
+button.lp-button {
+  background: linear-gradient(135deg, #00ff9d 0%, #00cc7a 100%) !important;
+  color: #001a10 !important;
+  border: 1px solid var(--lp-neon) !important;
+  font-weight: 700 !important;
+  box-shadow:
+    0 8px 24px -8px var(--lp-glow),
+    0 0 40px -10px var(--lp-glow),
+    inset 0 1px 0 rgba(255,255,255,.25) !important;
+  transition: transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s ease !important;
+}
+.lp-button:hover, .lp-outline-button:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow:
+    0 12px 32px -8px var(--lp-glow),
+    0 0 60px -8px var(--lp-glow),
+    inset 0 1px 0 rgba(255,255,255,.35) !important;
+}
+
+/* ⑤ البطاقات */
+.lp-feature-card, .lp-analytics-card, .lp-signal-card,
+.lp-mood-card, .lp-card,
+.lp-showcase-grid > div,
+.lp-dashboard-promo,
+.lp-payments,
+.lp-global {
+  background: linear-gradient(160deg, #0f1a1f 0%, #0b1215 100%) !important;
+  border: 1px solid var(--lp-border) !important;
+  color: var(--lp-txt) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(0,255,157,.08),
+    0 20px 40px -24px rgba(0,0,0,.9) !important;
+  transition: transform .3s cubic-bezier(.34,1.56,.64,1), border-color .3s, box-shadow .3s !important;
+}
+.lp-feature-card:hover, .lp-analytics-card:hover,
+.lp-signal-card:hover, .lp-mood-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--lp-border-hi) !important;
+  box-shadow:
+    0 0 0 1px var(--lp-neon),
+    0 24px 48px -24px rgba(0,0,0,.9),
+    0 0 60px -20px var(--lp-glow) !important;
+}
+.lp-feature-card h3, .lp-analytics-card h3, .lp-signal-card b {
+  color: var(--lp-txt) !important;
+}
+.lp-feature-card p, .lp-analytics-card p, .lp-signal-card p {
+  color: var(--lp-txt-2) !important;
+}
+
+/* ⑥ الأقسام البيضاء الأخرى */
+.lp-showcase-section, .lp-section,
+section.lp-section, .lp-features-section {
+  background: var(--lp-bg) !important;
+  color: var(--lp-txt) !important;
+}
+.lp-section-heading h2, .lp-showcase-copy h2, .lp-dashboard-promo-copy h2,
+.lp-global-copy h2, .lp-payments-copy h2, .lp-faq-grid h2 {
+  color: var(--lp-txt) !important;
+}
+.lp-section-heading p { color: var(--lp-txt-2) !important; }
+
+/* ⑦ أيقونات */
+.lp-feature-icon, .lp-signal-icon {
+  background: linear-gradient(135deg, rgba(0,255,157,.18), rgba(0,255,157,.04)) !important;
+  border: 1px solid var(--lp-border-hi) !important;
+  color: var(--lp-neon) !important;
+  box-shadow: 0 0 20px -6px var(--lp-glow), inset 0 0 12px rgba(0,255,157,.08) !important;
+}
+.tone-green, .tone-lime, .tone-mint {
+  background: rgba(0,255,157,.12) !important;
+  color: var(--lp-neon) !important;
+}
+.lp-feature-card > a {
+  background: rgba(0,255,157,.1) !important;
+  color: var(--lp-neon) !important;
+}
+.lp-sparkle-icon { animation: lpPulse 2.4s ease-in-out infinite; }
+@keyframes lpPulse {
+  0%,100% { box-shadow: 0 0 20px -6px var(--lp-glow); }
+  50%     { box-shadow: 0 0 32px -4px var(--lp-glow), inset 0 0 16px rgba(0,255,157,.16); }
+}
+
+/* ⑧ Navbar / Footer */
+.lp-nav, header.lp-nav, nav.lp-nav {
+  background: rgba(5,8,10,.85) !important;
+  backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid var(--lp-border) !important;
+}
+.lp-nav a, .lp-nav button { color: var(--lp-txt-2) !important; }
+.lp-nav a:hover { color: var(--lp-neon) !important; text-shadow: 0 0 12px var(--lp-glow); }
+.lp-footer { background: #030608 !important; color: var(--lp-txt-2) !important; }
+
+/* ⑨ Analytics */
+.lp-analytics-chart {
+  background: rgba(0,255,157,.03) !important;
+  border: 1px solid var(--lp-border) !important;
+}
+.lp-analytics-chart span {
+  background: linear-gradient(180deg, var(--lp-neon), var(--lp-neon-2)) !important;
+  box-shadow: 0 0 12px -2px var(--lp-glow) !important;
+}
+.lp-analytics-grid-lines i { background: rgba(0,255,157,.08) !important; }
+.lp-report-controls button, .lp-analytics-toolbar button {
+  background: transparent !important;
+  color: var(--lp-txt-2) !important;
+  border: 1px solid var(--lp-border) !important;
+}
+.lp-report-controls button[aria-pressed="true"] {
+  background: var(--lp-soft) !important;
+  color: var(--lp-neon) !important;
+  border-color: var(--lp-border-hi) !important;
+  box-shadow: 0 0 16px -4px var(--lp-glow) !important;
+}
+.lp-analytics-kpis b { color: var(--lp-neon) !important; text-shadow: 0 0 16px var(--lp-glow); }
+.lp-analytics-kpis small { color: var(--lp-txt-3) !important; }
+.lp-analytics-note { color: var(--lp-neon-2) !important; }
+.lp-eyebrow { color: var(--lp-neon) !important; text-shadow: 0 0 16px var(--lp-glow); }
+
+/* ⑩ Mood buttons */
+.lp-mood-options button {
+  background: rgba(0,255,157,.04) !important;
+  border: 1px solid var(--lp-border) !important;
+  transition: all .25s cubic-bezier(.34,1.56,.64,1) !important;
+}
+.lp-mood-options button:hover { transform: scale(1.15) translateY(-2px) !important; border-color: var(--lp-border-hi) !important; }
+.lp-mood-options button.is-selected {
+  background: var(--lp-soft) !important;
+  border-color: var(--lp-neon) !important;
+  box-shadow: 0 0 20px -6px var(--lp-glow) !important;
+}
+.lp-mood-copy b { color: var(--lp-neon) !important; }
+.lp-mood-copy small, .lp-smart-disclosure { color: var(--lp-txt-3) !important; }
+
+/* ⑪ نصوص عامة + Scrollbar + Selection */
+h1,h2,h3,h4,h5,h6 { color: var(--lp-txt); }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--lp-bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--lp-neon-2), var(--lp-neon));
+  border-radius: 10px;
+  box-shadow: 0 0 8px var(--lp-glow);
+}
+::selection { background: var(--lp-neon); color: #001a10; }
+
+/* ⑫ شبكة نقطية خلفية */
+.lp-page::before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,157,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,157,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   🎨 NEON DARK THEME — FULL REDESIGN
+   تحويل كامل: ألوان + تقسيم + تأثيرات + عمق
+   ══════════════════════════════════════════════════════════════════ */
+
+:root {
+  --n:  #00ff9d;                    /* نيون أخضر */
+  --n2: #00cc7a;                    /* نيون أغمق */
+  --ng: rgba(0,255,157,.45);        /* glow */
+  --ns: rgba(0,255,157,.12);        /* soft bg */
+  --nb: rgba(0,255,157,.18);        /* border */
+  --nbh:rgba(0,255,157,.55);        /* border hover */
+  --bg: #05080a;                    /* خلفية الصفحة */
+  --bg2:#08121a;                    /* خلفية القسم البديل */
+  --bg3:#0b1a22;                    /* خلفية بطاقة */
+  --txt:#eafff5;                    /* نص رئيسي */
+  --txt2:#a8bdb6;                   /* نص ثانوي */
+  --txt3:#5f7570;                   /* نص خافت */
+}
+
+/* ═══ 1) الخلفية العامة — إجبار داكن ═══ */
+html, html[data-theme], html[data-theme="light"], html[data-theme="dark"] {
+  color-scheme: dark !important;
+}
+body, .lp-page, main, #__next {
+  background: var(--bg) !important;
+  color: var(--txt) !important;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%,  rgba(0,255,157,.07), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0,204,122,.05), transparent 55%) !important;
+  background-attachment: fixed !important;
+}
+
+/* شبكة نقطية خلفية عامة */
+.lp-page::before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,157,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,157,.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none; z-index: 0;
+  mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 75%);
+}
+.lp-page > * { position: relative; z-index: 1; }
+
+/* ═══ 2) الأقسام — كلها داكنة + تناوب ═══ */
+section, .lp-section, .lp-showcase-section, .lp-features-section,
+.lp-how-section, .lp-plans-section, .lp-faq-section, .lp-trust-section {
+  background: var(--bg) !important;
+  color: var(--txt) !important;
+  position: relative;
+}
+section:nth-of-type(even),
+.lp-section:nth-of-type(even) {
+  background: var(--bg2) !important;
+}
+
+/* فاصل نيون بين الأقسام */
+section + section::before,
+.lp-section + .lp-section::before {
+  content: "";
+  position: absolute; top: 0; left: 8%; right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--nbh), transparent);
+  opacity: .5;
+}
+
+/* ═══ 3) Hero ═══ */
+.lp-hero, html[data-theme] .lp-hero {
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 5%,  rgba(0,255,157,.16), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 85% 95%, rgba(0,204,122,.12), transparent 55%),
+    linear-gradient(180deg, #040a08 0%, #051310 100%) !important;
+  color: var(--txt) !important;
+  border-bottom: 1px solid var(--nb) !important;
+}
+.lp-hero h1 { color: var(--txt) !important; text-shadow: 0 4px 60px rgba(0,255,157,.15); }
+.lp-hero h1 span {
+  color: var(--n) !important;
+  -webkit-text-fill-color: var(--n) !important;
+  text-shadow: 0 0 40px var(--ng), 0 0 80px rgba(0,255,157,.25);
+}
+.lp-hero p { color: var(--txt2) !important; }
+.lp-hero::before {
+  opacity: .35 !important;
+  background-image:
+    linear-gradient(rgba(0,255,157,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,157,.06) 1px, transparent 1px) !important;
+}
+
+/* ═══ 4) الأزرار ═══ */
+.lp-button, .lp-outline-button, .lp-button-light,
+button.lp-button, a.lp-button {
+  background: linear-gradient(135deg, var(--n) 0%, var(--n2) 100%) !important;
+  color: #001a10 !important;
+  border: 1px solid var(--n) !important;
+  font-weight: 700 !important;
+  box-shadow:
+    0 0 0 1px rgba(0,255,157,.25),
+    0 8px 24px -8px var(--ng),
+    0 0 40px -12px var(--ng),
+    inset 0 1px 0 rgba(255,255,255,.3) !important;
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1),
+              box-shadow .25s ease !important;
+}
+.lp-button:hover, .lp-outline-button:hover, .lp-button-light:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow:
+    0 0 0 1px var(--n),
+    0 14px 36px -10px var(--ng),
+    0 0 70px -10px var(--ng),
+    inset 0 1px 0 rgba(255,255,255,.4) !important;
+}
+.lp-button-outline, .lp-ghost-button {
+  background: transparent !important;
+  color: var(--n) !important;
+  border: 1px solid var(--nbh) !important;
+  box-shadow: inset 0 0 20px rgba(0,255,157,.05) !important;
+}
+.lp-button-outline:hover, .lp-ghost-button:hover {
+  background: var(--ns) !important;
+  box-shadow: 0 0 30px -8px var(--ng), inset 0 0 24px rgba(0,255,157,.1) !important;
+}
+
+/* ═══ 5) البطاقات — كل الأنواع ═══ */
+.lp-feature-card, .lp-analytics-card, .lp-signal-card,
+.lp-mood-card, .lp-plan-card, .lp-trust-card, .lp-step-card,
+.lp-showcase-card, .lp-stat-card, article.lp-card, div.lp-card {
+  background: linear-gradient(160deg, var(--bg3) 0%, #061118 100%) !important;
+  border: 1px solid var(--nb) !important;
+  border-radius: 20px !important;
+  color: var(--txt) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(0,255,157,.08),
+    0 20px 44px -28px rgba(0,0,0,.95) !important;
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1),
+              border-color .3s ease,
+              box-shadow .3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+/* شعاع ضوئي يمر عند hover */
+.lp-feature-card::after, .lp-plan-card::after, .lp-trust-card::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg,
+    transparent 25%, rgba(0,255,157,.08) 50%, transparent 75%);
+  opacity: 0; transition: opacity .45s ease;
+  pointer-events: none;
+}
+.lp-feature-card:hover::after, .lp-plan-card:hover::after,
+.lp-trust-card:hover::after { opacity: 1; }
+
+.lp-feature-card:hover, .lp-analytics-card:hover,
+.lp-signal-card:hover, .lp-mood-card:hover,
+.lp-plan-card:hover, .lp-trust-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: var(--nbh) !important;
+  box-shadow:
+    0 0 0 1px var(--n),
+    0 28px 56px -28px rgba(0,0,0,.95),
+    0 0 60px -18px var(--ng),
+    inset 0 1px 0 rgba(0,255,157,.15) !important;
+}
+.lp-feature-card h3, .lp-plan-card h3, .lp-trust-card h3,
+.lp-analytics-card h3 { color: var(--txt) !important; }
+.lp-feature-card p, .lp-plan-card p, .lp-trust-card p,
+.lp-analytics-card p { color: var(--txt2) !important; }
+
+/* ═══ 6) أيقونات البطاقات ═══ */
+.lp-feature-icon, .lp-signal-icon, .lp-trust-icon,
+.lp-feature-card > span[class*="icon"] {
+  background: linear-gradient(135deg, rgba(0,255,157,.2), rgba(0,255,157,.04)) !important;
+  border: 1px solid var(--nbh) !important;
+  color: var(--n) !important;
+  box-shadow:
+    0 0 24px -6px var(--ng),
+    inset 0 0 14px rgba(0,255,157,.1) !important;
+  border-radius: 14px !important;
+}
+.tone-green, .tone-lime, .tone-mint, .tone-blue, .tone-purple {
+  background: rgba(0,255,157,.12) !important;
+  color: var(--n) !important;
+  border: 1px solid var(--nb) !important;
+}
+.lp-feature-card > a {
+  background: rgba(0,255,157,.1) !important;
+  color: var(--n) !important;
+  border: 1px solid var(--nb) !important;
+  transition: all .3s ease !important;
+}
+.lp-feature-card > a:hover {
+  background: var(--ns) !important;
+  border-color: var(--nbh) !important;
+  box-shadow: 0 0 20px -4px var(--ng) !important;
+  transform: rotate(-45deg) scale(1.1);
+}
+
+/* ═══ 7) العناوين والنصوص ═══ */
+h1,h2,h3,h4,h5,h6,
+.lp-section-heading h2,
+.lp-showcase-copy h2,
+.lp-dashboard-promo-copy h2,
+.lp-global-copy h2,
+.lp-payments-copy h2,
+.lp-faq-grid h2,
+section h2 { color: var(--txt) !important; }
+
+p, .lp-section-heading p, section p {
+  color: var(--txt2) !important;
+}
+.lp-eyebrow, section small, .lp-section-heading small {
+  color: var(--n) !important;
+  text-shadow: 0 0 14px var(--ng);
+  letter-spacing: .03em;
+}
+
+/* ═══ 8) الخطوات 01 / 02 / 03 ═══ */
+.lp-step-number, [class*="step"] [class*="number"],
+.lp-how-step span:first-child, [data-step] {
+  background: linear-gradient(135deg, var(--n), var(--n2)) !important;
+  color: #001a10 !important;
+  border: 0 !important;
+  box-shadow: 0 0 24px -4px var(--ng), inset 0 1px 0 rgba(255,255,255,.4) !important;
+  font-weight: 800 !important;
+}
+
+/* ═══ 9) علامات ✓ ═══ */
+.lp-check, [class*="check"] svg, .lp-feature-list svg,
+.lp-plan-card svg[class*="check"], li svg {
+  color: var(--n) !important;
+  filter: drop-shadow(0 0 6px var(--ng));
+}
+
+/* ═══ 10) الخطط / الأسعار ═══ */
+.lp-plan-card {
+  background: linear-gradient(160deg, #0f1a1f 0%, #08121a 100%) !important;
+  border: 1px solid var(--nb) !important;
+}
+.lp-plan-card.is-featured,
+.lp-plan-card.is-popular,
+.lp-plan-card[data-featured="true"] {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(0,255,157,.12), transparent 60%),
+    linear-gradient(160deg, #0d1f1a 0%, #050f0c 100%) !important;
+  border: 1px solid var(--nbh) !important;
+  box-shadow:
+    0 0 0 1px var(--n),
+    0 30px 60px -30px rgba(0,0,0,.95),
+    0 0 80px -20px var(--ng) !important;
+  transform: scale(1.03);
+}
+.lp-plan-card.is-featured h3,
+.lp-plan-card.is-popular h3 { color: var(--n) !important; }
+
+/* ═══ 11) FAQ ═══ */
+.lp-faq-item, .lp-accordion-item, details.lp-faq {
+  background: linear-gradient(160deg, #0f1a1f 0%, #08121a 100%) !important;
+  border: 1px solid var(--nb) !important;
+  border-radius: 14px !important;
+  color: var(--txt) !important;
+  margin-bottom: 12px !important;
+  transition: all .3s ease !important;
+}
+.lp-faq-item:hover, .lp-accordion-item:hover, details.lp-faq:hover {
+  border-color: var(--nbh) !important;
+  box-shadow: 0 0 24px -8px var(--ng) !important;
+}
+.lp-faq-item summary, .lp-accordion-item summary,
+details.lp-faq summary {
+  color: var(--txt) !important;
+  font-weight: 600 !important;
+}
+.lp-faq-item[open], details.lp-faq[open] {
+  border-color: var(--n) !important;
+  box-shadow: 0 0 32px -10px var(--ng), inset 0 0 30px rgba(0,255,157,.04) !important;
+}
+.lp-faq-item p, details.lp-faq p { color: var(--txt2) !important; }
+.lp-faq-item summary::marker,
+details.lp-faq summary::marker { color: var(--n); }
+
+/* زر + في FAQ */
+.lp-faq-item button[aria-expanded],
+.lp-accordion-item button {
+  background: rgba(0,255,157,.08) !important;
+  color: var(--n) !important;
+  border: 1px solid var(--nb) !important;
+  border-radius: 50% !important;
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+}
+.lp-faq-item button[aria-expanded="true"] {
+  background: var(--n) !important;
+  color: #001a10 !important;
+  box-shadow: 0 0 20px -2px var(--ng) !important;
+}
+
+/* ═══ 12) CTA — إبراز قوي ═══ */
+.lp-cta, .lp-cta-section, [class*="cta"] {
+  background:
+    radial-gradient(ellipse 60% 100% at 50% 0%,   rgba(0,255,157,.18), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 100%,  rgba(0,204,122,.14), transparent 65%),
+    linear-gradient(180deg, #04100c 0%, #020806 100%) !important;
+  border-top: 1px solid var(--nb) !important;
+  border-bottom: 1px solid var(--nb) !important;
+  color: var(--txt) !important;
+}
+.lp-cta h2, .lp-cta-section h2 {
+  color: var(--txt) !important;
+  text-shadow: 0 0 40px rgba(0,255,157,.2);
+}
+
+/* ═══ 13) Navbar ═══ */
+.lp-nav, header.lp-nav, nav.lp-nav, nav {
+  background: rgba(5,8,10,.82) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  border-bottom: 1px solid var(--nb) !important;
+}
+.lp-nav a, nav a, nav button {
+  color: var(--txt2) !important;
+  transition: all .2s ease !important;
+}
+.lp-nav a:hover, nav a:hover {
+  color: var(--n) !important;
+  text-shadow: 0 0 12px var(--ng);
+}
+
+/* ═══ 14) Footer ═══ */
+footer, .lp-footer {
+  background: #020607 !important;
+  color: var(--txt2) !important;
+  border-top: 1px solid var(--nb) !important;
+}
+footer a, .lp-footer a { color: var(--txt2) !important; }
+footer a:hover, .lp-footer a:hover {
+  color: var(--n) !important;
+  text-shadow: 0 0 10px var(--ng);
+}
+
+/* ═══ 15) Dashboard mockup / images ═══ */
+.lp-dashboard-mockup, .lp-dashboard-preview,
+[class*="mockup"], [class*="preview"] {
+  background: linear-gradient(160deg, #0d1a22 0%, #060f14 100%) !important;
+  border: 1px solid var(--nbh) !important;
+  box-shadow:
+    0 0 0 1px rgba(0,255,157,.15),
+    0 40px 80px -40px rgba(0,0,0,.95),
+    0 0 80px -20px var(--ng) !important;
+  border-radius: 20px !important;
+}
+
+/* ═══ 16) الأيقونات العامة (SVG) ═══ */
+svg:not([data-color-keep]) { transition: all .25s ease; }
+
+/* ═══ 17) التمرير والسيلكشن ═══ */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--n2), var(--n));
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--ng);
+}
+::selection { background: var(--n); color: #001a10; }
+
+/* ═══ 18) أنيميشن ظهور الأقسام ═══ */
+@keyframes lpRise {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.lp-feature-card, .lp-plan-card, .lp-trust-card, .lp-step-card {
+  animation: lpRise .6s cubic-bezier(.2,.9,.3,1) both;
+}
+
+/* توهج نابض للعناصر المميزة */
+@keyframes lpPulse {
+  0%,100% { box-shadow: 0 0 20px -6px var(--ng); }
+  50%     { box-shadow: 0 0 40px -4px var(--ng); }
+}
+.lp-plan-card.is-featured,
+[data-featured="true"] { animation: lpPulse 3.5s ease-in-out infinite; }
+

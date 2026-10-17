@@ -223,14 +223,14 @@ export default function HomePage() {
           <nav className="lp-nav-links" aria-label="التنقل الرئيسي">
             <a href="#features">المزايا</a><a href="#workflow">كيف تعمل</a><a href="#global">لكل سوق</a><a href="#faq">الأسئلة الشائعة</a>
           </nav>
-          <div className="lp-nav-actions"><a className="lp-nav-login" href="/login">تسجيل الدخول</a>
+          <div className="lp-nav-actions">
             <button type="button" className="lp-theme-toggle" data-theme-toggle aria-label="تبديل سمة الواجهة" aria-pressed="false">
               <Moon size={16} className="lp-theme-moon" aria-hidden="true" />
               <Sun size={16} className="lp-theme-sun" aria-hidden="true" />
               <span className="lp-theme-label-light">الوضع الداكن</span>
               <span className="lp-theme-label-dark">الوضع الفاتح</span>
             </button>
-            <a className="lp-button lp-button-small" href="/register">ابدأ رحلتك <ArrowLeft size={16} /></a>
+            <a className="lp-button lp-button-small" href="#workflow">ابدأ رحلتك <ArrowLeft size={16} /></a>
           </div>
         </div>
       </header>
@@ -243,7 +243,7 @@ export default function HomePage() {
               <h1 id="hero-title">فكرتك تستحق<br /><span>متجراً يليق بها.</span></h1>
               <p className="lp-hero-lede">من أول منتج إلى أول طلب — أدوات تجارتك كلها في مكان واحد، بتجربة عربية واضحة وقابلة للتوسع.</p>
               <LandingSignals />
-              <div className="lp-hero-actions"><a className="lp-button" href="/register">ابدأ إنشاء متجرك <ArrowLeft size={17} /></a><a className="lp-text-link" href="#showcase"><span className="lp-play">▶</span> ألقِ نظرة على التجربة</a></div>
+              <div className="lp-hero-actions"><a className="lp-button" href="#workflow">ابدأ إنشاء متجرك <ArrowLeft size={17} /></a><a className="lp-text-link" href="#showcase"><span className="lp-play">▶</span> ألقِ نظرة على التجربة</a></div>
               <div className="lp-hero-assurance"><span><Check size={14} /> بلا تعقيد تقني</span><span><Check size={14} /> جاهز للنمو</span><span><Check size={14} /> مصمم لأسواق متعددة</span></div>
             </div>
             <div className="lp-hero-visual"><div className="lp-hero-orbit orbit-one" /><div className="lp-hero-orbit orbit-two" /><DashboardPreview /></div>
@@ -312,7 +312,7 @@ export default function HomePage() {
         </section>
 
         <section className="lp-cta-section" id="contact">
-          <div className="lp-container lp-cta-inner"><span className="lp-cta-orb" /><div className="lp-cta-mark"><BrandMark /></div><p className="lp-cta-eyebrow">خطوتك الأولى تبدأ هنا</p><h2>خلّ فكرتك تأخذ<br /><span>مساحتها.</span></h2><p>ابدأ من الأساسيات، وابنِ متجرك بالطريقة التي تناسبك.</p><a className="lp-button lp-button-light" href="/register">استكشف خطوات البداية <ArrowLeft size={17} /></a><small>معاينة واجهة الصفحة الرئيسية — بعض الخيارات المعروضة تمثيلية.</small></div>
+          <div className="lp-container lp-cta-inner"><span className="lp-cta-orb" /><div className="lp-cta-mark"><BrandMark /></div><p className="lp-cta-eyebrow">خطوتك الأولى تبدأ هنا</p><h2>خلّ فكرتك تأخذ<br /><span>مساحتها.</span></h2><p>ابدأ من الأساسيات، وابنِ متجرك بالطريقة التي تناسبك.</p><a className="lp-button lp-button-light" href="#workflow">استكشف خطوات البداية <ArrowLeft size={17} /></a><small>معاينة واجهة الصفحة الرئيسية — بعض الخيارات المعروضة تمثيلية.</small></div>
         </section>
       </main>
 
