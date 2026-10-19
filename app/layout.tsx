@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
         <Script id="theme-init" strategy="beforeInteractive">
           {`try {
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             });
           })();`}
         </Script>
-        <ThemeSwitcher />
+        {/* ThemeSwitcher disabled */}
       </body>
     </html>
   );

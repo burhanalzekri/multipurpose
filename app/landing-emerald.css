@@ -205,3 +205,111 @@ section:nth-of-type(even) { background: var(--e-bg-alt) !important; }
 .lp-feature-card, .lp-step-card { transform-style: preserve-3d; }
 .lp-button svg, .lp-outline-button svg { transition: transform .3s var(--e-ease); }
 .lp-button:hover svg { transform: translateX(-4px); }
+
+/* ═══ إصلاح النصوص المخفية في الوضع الداكن ═══ */
+.lp h1, .lp h2, .lp h3, .lp h4,
+.lp p, .lp span, .lp div,
+.lp-section-heading, .lp-section-heading *,
+.lp-showcase-copy h2, .lp-showcase-copy h2 *,
+.lp-payments-copy h2, .lp-payments-copy h2 *,
+.lp-dashboard-promo-copy h2, .lp-dashboard-promo-copy h2 *,
+.lp-global-copy h2, .lp-global-copy h2 *,
+.lp-faq-grid h2, .lp-faq-grid h2 * {
+  color: inherit !important;
+}
+.lp h1, .lp h2, .lp h3, .lp h4 { color: #111827 !important; }
+.lp p { color: #6b7280 !important; }
+.lp-hero h1, .lp-hero h1 span { color: #111827 !important; -webkit-text-fill-color: #111827 !important; background: none !important; }
+.lp-hero h1 span { color: #10b981 !important; -webkit-text-fill-color: #10b981 !important; }
+.lp-section-heading,
+.lp-section-heading h2,
+.lp-section-heading h3,
+.lp-showcase-copy h2,
+.lp-payments-copy h2,
+.lp-dashboard-promo-copy h2,
+.lp-global-copy h2,
+.lp-faq-grid h2 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  background: none !important;
+}
+.lp-section-heading span,
+.lp-showcase-copy h2 span,
+.lp-payments-copy h2 span,
+.lp-dashboard-promo-copy h2 span,
+.lp-global-copy h2 span,
+.lp-faq-grid h2 span {
+  color: #10b981 !important;
+  -webkit-text-fill-color: #10b981 !important;
+  background: none !important;
+}
+
+/* ═══ إخفاء زر تبديل الوضع نهائياً ═══ */
+.lp-theme-toggle { display: none !important; }
+
+/* ═══ إخفاء خطأ hydration عبر تعطيل data-theme ═══ */
+html, html[data-theme], html[data-theme="dark"], html[data-theme="light"] {
+  color-scheme: light !important;
+  background: #ffffff !important;
+}
+
+/* ═══ الدعم الكامل للوضعين (النهاري والليلي) ═══ */
+html, body { transition: background-color .3s ease, color .3s ease; }
+
+/* 1. الوضع الفاتح (النهاري) - افتراضي */
+:root, html[data-theme="light"] {
+  --bg-main: #ffffff;
+  --bg-alt: #f9fafb;
+  --text-main: #111827;
+  --text-sub: #6b7280;
+  --accent: #10b981;
+  --accent-text: #ffffff;
+}
+
+/* 2. الوضع الداكن (الليلي) - متوافق مع الثيم الزمردي */
+html[data-theme="dark"], .dark {
+  --bg-main: #0f172a;
+  --bg-alt: #1e293b;
+  --text-main: #f8fafc;
+  --text-sub: #94a3b8;
+  --accent: #10b981;
+  --accent-text: #ffffff;
+}
+
+/* 3. تطبيق المتغيرات على العناصر لضمان التناسق */
+body, .lp-page, main { background-color: var(--bg-main) !important; color: var(--text-main) !important; }
+.lp-section, section { background-color: var(--bg-alt) !important; color: var(--text-main) !important; }
+.lp h1, .lp h2, .lp h3, .lp h4, .lp p, .lp span, .lp a { color: var(--text-main) !important; }
+.lp .lp-section-lede, .lp .lp-hero-lede { color: var(--text-sub) !important; }
+
+/* 4. إصلاح النصوص التي كانت تختفي في الوضع الداكن */
+.lp-section-heading, .lp-section-heading h2, .lp-showcase-copy h2, 
+.lp-payments-copy h2, .lp-dashboard-promo-copy h2, .lp-global-copy h2, .lp-faq-grid h2 {
+  color: var(--text-main) !important;
+  -webkit-text-fill-color: var(--text-main) !important;
+  background: none !important;
+}
+.lp-section-heading span, .lp-showcase-copy h2 span, .lp-payments-copy h2 span, 
+.lp-dashboard-promo-copy h2 span, .lp-global-copy h2 span, .lp-faq-grid h2 span {
+  color: var(--accent) !important;
+  -webkit-text-fill-color: var(--accent) !important;
+}
+
+/* 5. إصلاح البطاقات لتعمل في الوضعين */
+.lp-feature-card, .lp-step-card, .lp-plan-card, .lp-trust-card, 
+.lp-methods-panel, .lp-localization-card, .lp-dashboard-mini-card, 
+.lp-analytics-card, .lp-analytics-panel, .lp-storefront-mock, .lp-faq-item {
+  background-color: var(--bg-main) !important;
+  border-color: var(--bg-alt) !important;
+  color: var(--text-main) !important;
+}
+.lp-feature-card h3, .lp-feature-card p,
+.lp-step-card h3, .lp-step-card p {
+  color: var(--text-main) !important;
+}
+.lp-feature-card p, .lp-step-card p { color: var(--text-sub) !important; }
+
+/* 6. إصلاح الأزرار لتكون واضحة في الوضعين */
+.lp-button { background-color: var(--accent) !important; color: var(--accent-text) !important; }
+.lp-outline-button { background-color: transparent !important; color: var(--accent) !important; border-color: var(--accent) !important; }
+.lp-outline-button:hover { background-color: var(--accent) !important; color: var(--accent-text) !important; }
