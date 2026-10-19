@@ -1,0 +1,207 @@
+/* ═══ EMERALD ELEGANCE — Light + Emerald + Depth ═══ */
+:root {
+  --e-bg: #ffffff;
+  --e-bg-alt: #f9fafb;
+  --e-bg-tint: #f0fdf4;
+  --e-emerald: #10b981;
+  --e-emerald-hi: #059669;
+  --e-emerald-soft: #d1fae5;
+  --e-emerald-deep: #065f46;
+  --e-text: #111827;
+  --e-text-2: #6b7280;
+  --e-text-3: #9ca3af;
+  --e-border: #e5e7eb;
+  --e-border-hi: #d1d5db;
+  --e-grad: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --e-grad-text: linear-gradient(135deg, #10b981 0%, #065f46 100%);
+  --e-shadow-sm: 0 1px 3px rgba(17,24,39,.06), 0 4px 12px rgba(17,24,39,.04);
+  --e-shadow-md: 0 4px 8px rgba(17,24,39,.06), 0 12px 24px rgba(16,185,129,.08);
+  --e-shadow-lg: 0 12px 32px rgba(17,24,39,.10), 0 24px 48px rgba(16,185,129,.12);
+  --e-shadow-xl: 0 24px 60px rgba(17,24,39,.14), 0 48px 96px rgba(16,185,129,.18);
+  --e-shadow-emerald: 0 6px 20px rgba(16,185,129,.35);
+  --e-r-sm: 8px;
+  --e-r-md: 12px;
+  --e-r-lg: 18px;
+  --e-r-xl: 24px;
+  --e-r-full: 999px;
+  --e-ease: cubic-bezier(.2,.9,.3,1);
+}
+html { color-scheme: light !important; }
+html, body { background: #ffffff !important; color: #111827 !important; }
+body, .lp-page, main {
+  background: #ffffff !important;
+  color: #111827 !important;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 15% 5%, rgba(16,185,129,.06), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 95%, rgba(16,185,129,.04), transparent 55%) !important;
+  background-attachment: fixed !important;
+}
+.lp { color: #111827 !important; background: transparent !important; }
+.lp-header {
+  background: rgba(255,255,255,.9) !important;
+  border-bottom: 1px solid var(--e-border) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 1px 2px rgba(17,24,39,.03) !important;
+}
+.lp-brand { color: var(--e-text) !important; }
+.lp-brand > span:last-child > span {
+  background: var(--e-grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+}
+.lp-brand-mark {
+  background: var(--e-emerald) !important;
+  box-shadow: 0 4px 12px rgba(16,185,129,.3) !important;
+}
+.lp-nav-links a, .lp-footer-links a { color: var(--e-text-2) !important; }
+.lp-nav-links a:hover, .lp-footer-links a:hover { color: var(--e-emerald-hi) !important; }
+.lp-theme-toggle { background: var(--e-bg-tint) !important; border: 1px solid var(--e-border) !important; color: var(--e-text-2) !important; }
+.lp-button, .lp-button-small {
+  background: var(--e-emerald) !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  box-shadow: var(--e-shadow-emerald) !important;
+  font-weight: 600 !important;
+  transition: transform .25s var(--e-ease), box-shadow .25s var(--e-ease), background .25s var(--e-ease) !important;
+}
+.lp-button:hover, .lp-button-small:hover {
+  background: var(--e-emerald-hi) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 28px rgba(16,185,129,.45) !important;
+}
+.lp-outline-button, .lp-button-outline, .lp-button-light {
+  background: #ffffff !important;
+  border: 1px solid var(--e-border-hi) !important;
+  color: var(--e-text) !important;
+  box-shadow: var(--e-shadow-sm) !important;
+}
+.lp-outline-button:hover, .lp-button-outline:hover, .lp-button-light:hover {
+  border-color: var(--e-emerald) !important;
+  color: var(--e-emerald-hi) !important;
+  box-shadow: var(--e-shadow-md) !important;
+  transform: translateY(-2px) !important;
+}
+section, .lp-value-section, .lp-features-section, .lp-showcase-section, .lp-steps-section, .lp-dashboard-section, .lp-payments-section, .lp-faq-section, .lp-trust-section {
+  background: transparent !important;
+  color: var(--e-text) !important;
+}
+section:nth-of-type(even) { background: var(--e-bg-alt) !important; }
+.lp-hero {
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(16,185,129,.10), transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, #f9fafb 100%) !important;
+  color: var(--e-text) !important;
+}
+.lp-hero::before {
+  background-image:
+    linear-gradient(rgba(16,185,129,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,185,129,.05) 1px, transparent 1px) !important;
+  opacity: .6 !important;
+}
+.lp-hero h1 { color: var(--e-text) !important; }
+.lp-hero h1 span {
+  background: var(--e-grad-text) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+.lp-hero-lede, .lp-hero p { color: var(--e-text-2) !important; }
+.lp-hero-badge {
+  background: var(--e-emerald-soft) !important;
+  border: 1px solid rgba(16,185,129,.2) !important;
+  color: var(--e-emerald-deep) !important;
+}
+.lp-live-dot, .lp-online-dot {
+  background: var(--e-emerald-hi) !important;
+  box-shadow: 0 0 0 4px rgba(16,185,129,.2) !important;
+}
+.lp-text-link { color: var(--e-text-2) !important; }
+.lp-text-link:hover { color: var(--e-emerald-hi) !important; }
+.lp-play { border-color: var(--e-border-hi) !important; color: var(--e-emerald-hi) !important; background: #fff !important; }
+.lp-hero-assurance { color: var(--e-text-3) !important; }
+.lp-hero-assurance svg { color: var(--e-emerald-hi) !important; }
+.lp h1, .lp h2, .lp h3, .lp h4 { color: var(--e-text) !important; }
+.lp h2 span, .lp-section-heading span, .lp-showcase-copy h2 span,
+.lp-dashboard-promo-copy h2 span, .lp-global-copy h2 span,
+.lp-payments-copy h2 span, .lp-faq-grid h2 span {
+  background: var(--e-grad-text) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+.lp-eyebrow { color: var(--e-emerald-deep) !important; background: var(--e-emerald-soft) !important; padding: 6px 14px !important; border-radius: var(--e-r-full) !important; display: inline-block !important; font-weight: 600 !important; }
+.lp-eyebrow-dot { background: var(--e-emerald-hi) !important; }
+.lp-section-lede { color: var(--e-text-2) !important; }
+.lp-feature-card, .lp-step-card, .lp-plan-card, .lp-trust-card,
+.lp-methods-panel, .lp-localization-card, .lp-dashboard-mini-card,
+.lp-analytics-card, .lp-analytics-panel, .lp-storefront-mock, .lp-faq-item {
+  background: #ffffff !important;
+  border: 1px solid var(--e-border) !important;
+  color: var(--e-text) !important;
+  box-shadow: var(--e-shadow-sm) !important;
+  border-radius: var(--e-r-lg) !important;
+  transition: transform .3s var(--e-ease), border-color .3s var(--e-ease), box-shadow .3s var(--e-ease) !important;
+}
+.lp-feature-card:hover, .lp-step-card:hover, .lp-plan-card:hover, .lp-trust-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(16,185,129,.3) !important;
+  box-shadow: var(--e-shadow-lg) !important;
+}
+.tone-green, .tone-peach, .tone-blue, .tone-lime,
+.lp-step-icon, .lp-value-icon, .green-setting, .cash-icon, .bank-icon,
+.lp-setting-icon, .lp-shop-avatar, .lp-user-avatar {
+  background: var(--e-emerald-soft) !important;
+  color: var(--e-emerald-hi) !important;
+}
+.lp-dashboard-window {
+  background: #ffffff !important;
+  border: 1px solid var(--e-border) !important;
+  color: var(--e-text) !important;
+  box-shadow: var(--e-shadow-xl) !important;
+  transform: perspective(1400px) rotateY(-4deg) rotateX(1deg) !important;
+  transition: transform .8s var(--e-ease) !important;
+}
+.lp-dashboard-window:hover {
+  transform: perspective(1400px) rotateY(0deg) rotateX(0deg) translateY(-4px) !important;
+}
+.lp-window-topbar { background: #fff !important; border-bottom: 1px solid var(--e-border) !important; }
+.lp-window-address { background: var(--e-bg-tint) !important; color: var(--e-text-3) !important; }
+.lp-window-address span { background: var(--e-emerald) !important; }
+.lp-dashboard-sidebar { background: var(--e-bg-alt) !important; border-left-color: var(--e-border) !important; }
+.lp-stat-card, .lp-chart-card, .lp-orders-card { background: #fff !important; border: 1px solid var(--e-border) !important; }
+.lp-stat-card strong, .lp-chart-card strong { color: var(--e-text) !important; }
+.lp-floating-insight, .lp-promo-float {
+  background: #fff !important;
+  border: 1px solid var(--e-border) !important;
+  box-shadow: var(--e-shadow-lg) !important;
+  color: var(--e-text) !important;
+}
+.lp-floating-insight > span:first-child, .lp-promo-float-icon { background: var(--e-emerald-soft) !important; color: var(--e-emerald-hi) !important; }
+.lp-footer { background: var(--e-bg-alt) !important; border-top: 1px solid var(--e-border) !important; color: var(--e-text-2) !important; }
+.lp-footer-brand { color: var(--e-text) !important; }
+.lp-cta { background: radial-gradient(ellipse at 50% 50%, rgba(16,185,129,.10), transparent 70%), #ffffff !important; }
+.lp-cta-inner {
+  background: #fff !important;
+  border: 1px solid var(--e-border) !important;
+  border-radius: var(--e-r-xl) !important;
+  box-shadow: var(--e-shadow-xl) !important;
+}
+.lp-cta-orb { background: radial-gradient(circle, rgba(16,185,129,.15), transparent 70%) !important; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--e-bg-alt); }
+::-webkit-scrollbar-thumb { background: var(--e-emerald); border-radius: 10px; }
+::selection { background: var(--e-emerald-soft); color: var(--e-emerald-deep); }
+@keyframes eRise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes eFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes ePulse { 0%,100% { box-shadow: var(--e-shadow-md); } 50% { box-shadow: var(--e-shadow-lg), 0 0 40px -8px rgba(16,185,129,.4); } }
+.lp-feature-card, .lp-step-card, .lp-plan-card, .lp-trust-card { animation: eRise .7s var(--e-ease) both; }
+.lp-floating-insight, .lp-promo-float { animation: eFloat 5s ease-in-out infinite; }
+.lp-analytics-card, .lp-dashboard-mini-card { animation: ePulse 5s ease-in-out infinite; }
+.lp-feature-card, .lp-step-card { transform-style: preserve-3d; }
+.lp-button svg, .lp-outline-button svg { transition: transform .3s var(--e-ease); }
+.lp-button:hover svg { transform: translateX(-4px); }
